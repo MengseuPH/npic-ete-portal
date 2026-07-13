@@ -49,8 +49,16 @@ html[lang="kh"] {
 
 html[lang="kh"] h1,
 html[lang="kh"] h2,
-html[lang="kh"] h3 {
-    font-weight: 500;
+html[lang="kh"] h3,
+html[lang="kh"] h4,
+html[lang="kh"] .btn-title,
+html[lang="kh"] .btn-label,
+html[lang="kh"] .btn-action,
+html[lang="kh"] .footer-title,
+html[lang="kh"] .subtitle,
+html[lang="kh"] .role-badge,
+html[lang="kh"] strong {
+    font-weight: 400;
 }
 
 /* Global Reset & Base Styles */
