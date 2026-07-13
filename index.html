@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPIC - Electronic & Telecommunication Engineering Portal</title>
+    <!-- Meta tags for SEO & social sharing -->
+    <meta name="description" content="Official information portal for the Electronic & Telecommunication Engineering Department at the National Polytechnic Institute of Cambodia (NPIC). Access lecturer contacts, Facebook page, and Telegram group.">
+    <meta name="keywords" content="NPIC, Electronic Engineering, Telecommunication Engineering, Cambodia, National Polytechnic Institute of Cambodia, ETE Department">
+    <meta name="author" content="NPIC ETE Department">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NPIC - Electronic & Telecommunication Engineering Portal">
+    <meta property="og:description" content="Official department portal. Access lecturer contacts, social channels, and student groups.">
+    <meta property="og:url" content="https://mengseuph.github.io/npic-ete-portal/">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background glow elements for rich modern aesthetics -->
+    <div class="glow-bg">
+        <div class="glow-sphere glow-1"></div>
+        <div class="glow-sphere glow-2"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <!-- ETE/NPIC Emblem SVG -->
+                <svg class="npic-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="var(--primary)" stroke-width="4" />
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="var(--primary-light)" stroke-width="1" stroke-dasharray="4 4" />
+                    <!-- Antenna representation for Telecom -->
+                    <path d="M50 20 L50 70" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M35 35 Q50 25 65 35" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M40 45 Q50 38 60 45" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="50" cy="20" r="5" fill="var(--accent)" />
+                    <!-- Circuit track representation for Electronics -->
+                    <path d="M25 70 L35 70 L45 60 L55 60 L65 70 L75 70" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="25" cy="70" r="3" fill="var(--primary)" />
+                    <circle cx="75" cy="70" r="3" fill="var(--primary)" />
+                </svg>
+            </div>
+            <div class="header-text">
+                <span class="badge">NPIC Official Portal</span>
+                <h1>Electronic & Telecommunication Engineering</h1>
+                <p class="subtitle">National Polytechnic Institute of Cambodia</p>
+            </div>
+        </header>
+
+        <!-- Hero / Welcome Info -->
+        <section class="hero-card">
+            <div class="hero-content">
+                <h2>Welcome to ETE Department</h2>
+                <p>Your central gateway to stay connected, access lecturer contact details, join the student community, and check department announcements.</p>
+            </div>
+            <div class="tech-wave">
+                <!-- Pure CSS Wave graphic background decoration -->
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+            </div>
+        </section>
+
+        <!-- Quick Access Action Buttons -->
+        <main class="main-content">
+            <section class="quick-links">
+                <h3 class="section-title">Official Department Channels</h3>
+                <div class="action-buttons">
+                    <!-- Facebook Button -->
+                    <a href="https://www.facebook.com/npic.edu.kh" target="_blank" rel="noopener noreferrer" class="btn btn-facebook" id="facebook-btn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.85z"/>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <span class="btn-label">Follow Us On</span>
+                            <span class="btn-title">Faculty Facebook Page</span>
+                        </div>
+                        <div class="btn-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- Telegram Button -->
+                    <a href="https://t.me/joinchat/placeholder" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" id="telegram-btn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.37-.49 1.03-.75 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.13-.03.19z"/>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <span class="btn-label">Join Our Community</span>
+                            <span class="btn-title">Student Telegram Group</span>
+                        </div>
+                        <div class="btn-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Lecturer Contacts Section -->
+            <section class="contacts-section">
+                <h3 class="section-title">Faculty Contacts</h3>
+                <div class="contacts-grid">
+                    <!-- Lecturer Card 1 -->
+                    <div class="contact-card">
+                        <div class="card-glow"></div>
+                        <div class="contact-header">
+                            <div class="avatar-container">
+                                <!-- User Icon SVG -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="avatar-icon">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-title">
+                                <h4>Mr. Roun Thai</h4>
+                                <span class="role-badge">Faculty Coordinator</span>
+                            </div>
+                        </div>
+                        <div class="contact-details">
+                            <p class="phone-number">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-svg">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <span>+855 10 952 178</span>
+                            </p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="tel:+85510952178" class="btn-action call-btn" title="Call Mr. Roun Thai">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                Call
+                            </a>
+                            <button class="btn-action copy-btn" data-phone="+85510952178" title="Copy Number">
+                                <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Lecturer Card 2 -->
+                    <div class="contact-card">
+                        <div class="card-glow"></div>
+                        <div class="contact-header">
+                            <div class="avatar-container">
+                                <!-- User Icon SVG -->
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="avatar-icon">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-title">
+                                <h4>Dr. Seng Sovann</h4>
+                                <span class="role-badge">Senior Lecturer</span>
+                            </div>
+                        </div>
+                        <div class="contact-details">
+                            <p class="phone-number">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-svg">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <span>+855 12 345 678</span>
+                            </p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="tel:+85512345678" class="btn-action call-btn" title="Call Dr. Seng Sovann">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                Call
+                            </a>
+                            <button class="btn-action copy-btn" data-phone="+85512345678" title="Copy Number">
+                                <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- QR Code Section -->
+            <section class="qr-section">
+                <div class="qr-container-card">
+                    <div class="qr-text">
+                        <h3>Scan to Share & Save</h3>
+                        <p>This QR code always points to this official portal. Save, print, or share it with other students so they can easily access the department contacts and social channels.</p>
+                        <div class="qr-actions">
+                            <a href="qrcode.png" download="NPIC_ETE_Portal_QR.png" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download QR Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="qr-image-wrapper">
+                        <img src="qrcode.png" alt="Official NPIC ETE Portal QR Code" class="qr-image">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-divider"></div>
+            <p class="footer-title">National Polytechnic Institute of Cambodia</p>
+            <p class="footer-address">Phum Prey Popel, Sangkat Chom Chao, Khan Porsenchey, Phnom Penh, Cambodia</p>
+            <p class="footer-web"><a href="https://npic.edu.kh" target="_blank" rel="noopener noreferrer">www.npic.edu.kh</a></p>
+            <p class="footer-copyright">&copy; 2026 NPIC Faculty of Electronics. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Number copied to clipboard!</div>
+
+    <!-- JavaScript logic -->
+    <script src="script.js"></script>
+</body>
+</html>
