@@ -39,7 +39,7 @@ This repository contains a permanent QR code (`qrcode.png`) pointing directly to
 To update the contacts, social links, or department details:
 
 1. Open [index.html](file:///home/mengseu/Documents/QR%20Code%20for%20Information/index.html) and search for the placeholder links/numbers:
-   * **Facebook Page:** Look for `href="https://www.facebook.com/npic.edu.kh"`
+   * **Facebook Page:** Look for `href="https://www.facebook.com/profile.php?id=100063624697510"`
    * **Telegram Group:** Look for `href="https://t.me/joinchat/placeholder"`
    * **Mr. Roun Thai's Phone Number:** Look for `+855 10 952 178` and its `href="tel:+85510952178"`
    * **Dr. Seng Sovann's Phone Number:** Look for `+855 12 345 678` and its `href="tel:+85512345678"`
