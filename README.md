@@ -40,8 +40,8 @@ To update the contacts, social links, or department details:
 
 1. Open [index.html](file:///home/mengseu/Documents/QR%20Code%20for%20Information/index.html) and search for the placeholder links/numbers:
    * **Facebook Page:** Look for `href="https://www.facebook.com/profile.php?id=100063624697510"`
-   * **Telegram Group:** Look for `href="https://t.me/joinchat/placeholder"`
-   * **Mr. Roun Thai's Phone Number:** Look for `+855 10 952 178` and its `href="tel:+85510952178"`
-   * **Dr. Seng Sovann's Phone Number:** Look for `+855 12 345 678` and its `href="tel:+85512345678"`
+   * **Telegram Group:** Look for `href="https://t.me/+LJ7wDoTlluczYTll"`
+   * **Ms. Toem Phanna's Phone Number:** Look for `+855 85 818 621` and its `href="tel:+85585818621"`
+   * **Mr. Pheng Mengseu's Phone Number:** Look for `+855 96 302 2598` and its `href="tel:+855963022598"`
 2. Edit the text inside the quotes.
 3. Save the files, commit, and push them to GitHub. The changes will reflect on the live website automatically in seconds!
