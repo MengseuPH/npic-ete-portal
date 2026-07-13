@@ -76,19 +76,19 @@ body {
 
 .bg-slide {
     position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
+    top: -15%;
+    left: -15%;
+    width: 130%;
+    height: 130%;
     background-size: cover;
     background-position: center;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 2s ease-in-out;
     opacity: 0;
-    filter: blur(3px) brightness(1.02) saturate(1.05);
+    filter: blur(40px) brightness(0.95) saturate(1.15);
 }
 
 .bg-slide.active {
-    opacity: 0.22;
+    opacity: 0.25;
 }
 
 .glow-sphere {
