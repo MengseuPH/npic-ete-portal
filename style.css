@@ -1091,3 +1091,113 @@ body {
     color: #ffffff;
     box-shadow: 0 2px 8px rgba(30, 80, 220, 0.25);
 }
+
+/* Faculty Brochure Section Styling */
+.brochure-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.brochure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.brochure-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    position: relative;
+}
+
+.brochure-card:hover {
+    background-color: var(--card-hover-bg);
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: rgba(30, 80, 220, 0.25);
+}
+
+.brochure-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1.414; /* A4 aspect ratio */
+    overflow: hidden;
+    position: relative;
+    background: rgba(30, 80, 220, 0.05);
+}
+
+.brochure-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.brochure-card:hover .brochure-img {
+    transform: scale(1.04);
+}
+
+.brochure-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 32, 67, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+}
+
+.brochure-card:hover .brochure-overlay {
+    opacity: 1;
+}
+
+.zoom-icon {
+    width: 28px;
+    height: 28px;
+    color: #ffffff;
+}
+
+.brochure-overlay span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.brochure-info {
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.brochure-info span {
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+@media (max-width: 480px) {
+    .brochure-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+

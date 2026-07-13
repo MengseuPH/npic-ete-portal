@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     setupLanguageSwitcher();
     setupCopyButtons();
+    setupLightbox();
     setupActivitiesGallery();
+    setupBrochureGallery();
     setupBackgroundSlideshow();
 });
 
@@ -75,73 +77,50 @@ function setupCopyButtons() {
 }
 
 /**
- * Configures the faculty activities gallery toggle and lightbox modal
+ * Configures a generic lightbox modal that can display lists of images
  */
-function setupActivitiesGallery() {
-    const toggleBtn = document.getElementById('toggle-gallery-btn');
-    const hideableCards = document.querySelectorAll('.activity-card.hideable');
-    const cards = document.querySelectorAll('.activity-card');
-    
-    // Gallery Expand/Collapse Toggle
-    if (toggleBtn && hideableCards.length > 0) {
-        toggleBtn.addEventListener('click', () => {
-            const isExpanded = toggleBtn.classList.contains('expanded');
-            
-            hideableCards.forEach((card, index) => {
-                if (isExpanded) {
-                    card.classList.add('hidden');
-                    card.classList.remove('fade-in');
-                } else {
-                    card.classList.remove('hidden');
-                    // Stagger the fade-in animation for a premium micro-animation feel!
-                    card.style.animationDelay = `${index * 0.06}s`;
-                    card.classList.add('fade-in');
-                }
-            });
-            
-            const isKhmer = (window.currentPortalLang === 'kh');
-            if (isExpanded) {
-                toggleBtn.classList.remove('expanded');
-                toggleBtn.querySelector('span').textContent = isKhmer ? 'មើលសកម្មភាពទាំងអស់' : 'View All Activities';
-            } else {
-                toggleBtn.classList.add('expanded');
-                toggleBtn.querySelector('span').textContent = isKhmer ? 'បង្ហាញតិច' : 'Show Less';
-            }
-        });
-    }
-
-    // Lightbox Logic
+function setupLightbox() {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.getElementById('lightbox-close');
     const prevBtn = document.getElementById('lightbox-prev');
     const nextBtn = document.getElementById('lightbox-next');
     
+    if (!lightbox || !lightboxImg) return;
+
+    let currentGroupItems = [];
     let currentIndex = 0;
-    
-    // Get all image sources
-    const galleryItems = Array.from(cards).map(card => card.getAttribute('data-src'));
 
-    function showImage(index) {
-        if (index < 0) {
-            index = galleryItems.length - 1;
-        } else if (index >= galleryItems.length) {
-            index = 0;
-        }
-        currentIndex = index;
-        
-        // Update lightbox elements
-        lightboxImg.src = galleryItems[currentIndex];
-    }
-
-    function openLightbox(index) {
+    window.openLightbox = function(items, index) {
+        currentGroupItems = items;
         showImage(index);
+        
+        // Show/hide navigation arrows based on number of items
+        if (currentGroupItems.length <= 1) {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+        } else {
+            if (prevBtn) prevBtn.style.display = 'flex';
+            if (nextBtn) nextBtn.style.display = 'flex';
+        }
+
         lightbox.style.display = 'flex';
-        // Allow rendering display before adding active show class to trigger CSS transition opacity!
         setTimeout(() => {
             lightbox.classList.add('show');
         }, 10);
         document.body.style.overflow = 'hidden'; // Disable scroll on body
+    };
+
+    function showImage(index) {
+        if (index < 0) {
+            index = currentGroupItems.length - 1;
+        } else if (index >= currentGroupItems.length) {
+            index = 0;
+        }
+        currentIndex = index;
+        
+        // Update lightbox element
+        lightboxImg.src = currentGroupItems[currentIndex];
     }
 
     function closeLightbox() {
@@ -152,14 +131,6 @@ function setupActivitiesGallery() {
         }, 350);
         document.body.style.overflow = ''; // Enable scroll on body
     }
-
-    // Add click listeners to cards
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const index = parseInt(card.getAttribute('data-index'), 10);
-            openLightbox(index);
-        });
-    });
 
     // Close on click close button
     if (closeBtn) {
@@ -210,18 +181,17 @@ function setupActivitiesGallery() {
     let touchStartX = 0;
     let touchEndX = 0;
     
-    if (lightbox) {
-        lightbox.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
 
-        lightbox.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-    }
+    lightbox.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
 
     function handleSwipe() {
+        if (currentGroupItems.length <= 1) return;
         const threshold = 50; // swipe distance threshold in px
         if (touchEndX < touchStartX - threshold) {
             // Swiped Left -> Show next image
@@ -232,6 +202,70 @@ function setupActivitiesGallery() {
         }
     }
 }
+
+/**
+ * Configures the faculty activities gallery toggle and click actions
+ */
+function setupActivitiesGallery() {
+    const toggleBtn = document.getElementById('toggle-gallery-btn');
+    const hideableCards = document.querySelectorAll('.activity-card.hideable');
+    const cards = document.querySelectorAll('.activity-card');
+    
+    // Gallery Expand/Collapse Toggle
+    if (toggleBtn && hideableCards.length > 0) {
+        toggleBtn.addEventListener('click', () => {
+            const isExpanded = toggleBtn.classList.contains('expanded');
+            
+            hideableCards.forEach((card, index) => {
+                if (isExpanded) {
+                    card.classList.add('hidden');
+                    card.classList.remove('fade-in');
+                } else {
+                    card.classList.remove('hidden');
+                    // Stagger the fade-in animation for a premium micro-animation feel!
+                    card.style.animationDelay = `${index * 0.06}s`;
+                    card.classList.add('fade-in');
+                }
+            });
+            
+            const isKhmer = (window.currentPortalLang === 'kh');
+            if (isExpanded) {
+                toggleBtn.classList.remove('expanded');
+                toggleBtn.querySelector('span').textContent = isKhmer ? 'មើលសកម្មភាពទាំងអស់' : 'View All Activities';
+            } else {
+                toggleBtn.classList.add('expanded');
+                toggleBtn.querySelector('span').textContent = isKhmer ? 'បង្ហាញតិច' : 'Show Less';
+            }
+        });
+    }
+
+    // Connect activities cards to lightbox
+    const galleryItems = Array.from(cards).map(card => card.getAttribute('data-src'));
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            if (window.openLightbox) {
+                window.openLightbox(galleryItems, index);
+            }
+        });
+    });
+}
+
+/**
+ * Configures the brochure gallery click actions
+ */
+function setupBrochureGallery() {
+    const brochureCards = document.querySelectorAll('.brochure-card');
+    const brochureItems = Array.from(brochureCards).map(card => card.getAttribute('data-src'));
+    
+    brochureCards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            if (window.openLightbox) {
+                window.openLightbox(brochureItems, index);
+            }
+        });
+    });
+}
+
 
 /**
  * Creates a rotating background slideshow of the 8 faculty activities
