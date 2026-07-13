@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NPIC - Electronic & Telecommunication Engineering Portal</title>
+    <title>NPIC - Faculty of Electronic and Telecommunication Portal</title>
     <!-- Meta tags for SEO & social sharing -->
-    <meta name="description" content="Official information portal for the Electronic & Telecommunication Engineering Department at the National Polytechnic Institute of Cambodia (NPIC). Access lecturer contacts, Facebook page, and Telegram group.">
-    <meta name="keywords" content="NPIC, Electronic Engineering, Telecommunication Engineering, Cambodia, National Polytechnic Institute of Cambodia, ETE Department">
-    <meta name="author" content="NPIC ETE Department">
+    <meta name="description" content="Official information portal for the Faculty of Electronic and Telecommunication at the National Polytechnic Institute of Cambodia (NPIC). Access lecturer contacts, Facebook page, and Telegram group.">
+    <meta name="keywords" content="NPIC, Electronic Engineering, Telecommunication Engineering, Cambodia, National Polytechnic Institute of Cambodia, ETE Faculty">
+    <meta name="author" content="NPIC ETE Faculty">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="NPIC - Electronic & Telecommunication Engineering Portal">
-    <meta property="og:description" content="Official department portal. Access lecturer contacts, social channels, and student groups.">
+    <meta property="og:title" content="NPIC - Faculty of Electronic and Telecommunication Portal">
+    <meta property="og:description" content="Official faculty portal. Access lecturer contacts, social channels, and student groups.">
     <meta property="og:url" content="https://mengseuph.github.io/npic-ete-portal/">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300;400;500;600;700;800&family=Moul&family=Siemreap&display=swap" rel="stylesheet">
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -33,23 +33,28 @@
     </div>
 
     <div class="container">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="kh">ភាសាខ្មែរ</button>
+        </div>
+
         <!-- Header Section -->
         <header class="header">
             <div class="logo-container">
                 <img src="logo/npic-logo.png" alt="NPIC Logo" class="npic-logo">
             </div>
             <div class="header-text">
-                <span class="badge">NPIC Official Portal</span>
-                <h1>Electronic & Telecommunication Engineering</h1>
-                <p class="subtitle">National Polytechnic Institute of Cambodia</p>
+                <p class="subtitle" data-en="National Polytechnic Institute of Cambodia" data-kh="វិទ្យាស្ថានជាតិពហុបច្ចេកវិទ្យាកម្ពុជា">National Polytechnic Institute of Cambodia</p>
+                <h1 data-en="Faculty of Electronic and Telecommunication" data-kh="មហាវិទ្យាល័យអេឡិចត្រូនិក និងទូរគមនាគមន៍">Faculty of Electronic and Telecommunication</h1>
             </div>
         </header>
 
         <!-- Hero / Welcome Info -->
         <section class="hero-card">
             <div class="hero-content">
-                <h2>Welcome to Electronic & Telecommunication Engineering Department</h2>
-                <p>Your central gateway to stay connected, access lecturer contact details, join the student community, and check department announcements.</p>
+                <h2 data-en="Welcome to Faculty of Electronic and Telecommunication" data-kh="សូមស្វាគមន៍មកកាន់មហាវិទ្យាល័យអេឡិចត្រូនិក និងទូរគមនាគមន៍">Welcome to Faculty of Electronic and Telecommunication</h2>
+                <p data-en="Your central gateway to stay connected, access lecturer contact details, join the student community, and check faculty announcements." data-kh="ច្រកទ្វារកណ្តាលរបស់អ្នកដើម្បីរក្សាទំនាក់ទំនង ចូលទៅកាន់ព័ត៌មានទំនាក់ទំនងរបស់សាស្ត្រាចារ្យ ចូលរួមជាមួយសហគមន៍និស្សិត និងពិនិត្យមើលការប្រកាសរបស់មហាវិទ្យាល័យ។">Your central gateway to stay connected, access lecturer contact details, join the student community, and check faculty announcements.</p>
             </div>
             <div class="tech-wave">
                 <!-- Pure CSS Wave graphic background decoration -->
@@ -61,7 +66,7 @@
         <!-- Quick Access Action Buttons -->
         <main class="main-content">
             <section class="quick-links">
-                <h3 class="section-title">Official Department Channels</h3>
+                <h3 class="section-title" data-en="Official Faculty Channels" data-kh="បណ្តាញផ្លូវការរបស់មហាវិទ្យាល័យ">Official Faculty Channels</h3>
                 <div class="action-buttons">
                     <!-- Facebook Button -->
                     <a href="https://www.facebook.com/profile.php?id=100063624697510" target="_blank" rel="noopener noreferrer" class="btn btn-facebook" id="facebook-btn">
@@ -71,8 +76,8 @@
                             </svg>
                         </div>
                         <div class="btn-content">
-                            <span class="btn-label">Follow Us On</span>
-                            <span class="btn-title">Faculty Facebook Page</span>
+                            <span class="btn-label" data-en="Follow Us On" data-kh="តាមដានពួកយើងនៅលើ">Follow Us On</span>
+                            <span class="btn-title" data-en="Faculty Facebook Page" data-kh="ទំព័រហ្វេសប៊ុករបស់មហាវិទ្យាល័យ">Faculty Facebook Page</span>
                         </div>
                         <div class="btn-arrow">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -90,8 +95,8 @@
                             </svg>
                         </div>
                         <div class="btn-content">
-                            <span class="btn-label">Join Our Community</span>
-                            <span class="btn-title">Student Telegram Group</span>
+                            <span class="btn-label" data-en="Join Our Community" data-kh="ចូលរួមជាមួយសហគមន៍របស់យើង">Join Our Community</span>
+                            <span class="btn-title" data-en="Student Telegram Group" data-kh="ក្រុមតេឡេក្រាមនិស្សិត">Student Telegram Group</span>
                         </div>
                         <div class="btn-arrow">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -105,7 +110,7 @@
 
             <!-- Lecturer Contacts Section -->
             <section class="contacts-section">
-                <h3 class="section-title">Faculty Contacts</h3>
+                <h3 class="section-title" data-en="Faculty Contacts" data-kh="ទំនាក់ទំនងសាស្ត្រាចារ្យ">Faculty Contacts</h3>
                 <div class="contacts-grid">
                     <!-- Lecturer Card 1 -->
                     <div class="contact-card">
@@ -115,8 +120,8 @@
                                 <img src="Techer%20Photos/Pheng_Mengseu.jpg" alt="Mr. Pheng Mengseu" class="avatar-img">
                             </div>
                             <div class="contact-title">
-                                <h4>Mr. Pheng Mengseu</h4>
-                                 <span class="role-badge">Lecturer / Graduated from Ang Prah Sdach High School</span>
+                                <h4 data-en="Mr. Pheng Mengseu" data-kh="លោកគ្រូ ផេង ម៉េងស៊ឺ">Mr. Pheng Mengseu</h4>
+                                 <span class="role-badge" data-en="Lecturer / Graduated from Ang Prah Sdach High School" data-kh="សាស្ត្រាចារ្យ / បានបញ្ចប់ការសិក្សាពីវិទ្យាល័យ អង្គព្រះស្តេច">Lecturer / Graduated from Ang Prah Sdach High School</span>
                             </div>
                         </div>
                         <div class="contact-details">
@@ -128,18 +133,18 @@
                             </p>
                         </div>
                         <div class="card-actions">
-                            <a href="tel:+855963022598" class="btn-action call-btn" title="Call Mr. Pheng Mengseu">
+                            <a href="tel:+855963022598" class="btn-action call-btn" title="Call Mr. Pheng Mengseu" data-title-en="Call Mr. Pheng Mengseu" data-title-kh="ហៅទូរស័ព្ទទៅកាន់លោកគ្រូ ផេង ម៉េងស៊ឺ">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                 </svg>
-                                Call
+                                <span data-en="Call" data-kh="ហៅទូរស័ព្ទ">Call</span>
                             </a>
-                            <button class="btn-action copy-btn" data-phone="+855963022598" title="Copy Number">
+                            <button class="btn-action copy-btn" data-phone="+855963022598" title="Copy Number" data-title-en="Copy Number" data-title-kh="ចម្លងលេខទូរស័ព្ទ">
                                 <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                                 </svg>
-                                Copy
+                                <span data-en="Copy" data-kh="ចម្លង">Copy</span>
                             </button>
                         </div>
                     </div>
@@ -152,8 +157,8 @@
                                 <img src="Techer%20Photos/Nakkru_Phana.jpg" alt="Ms. Toem Phanna" class="avatar-img">
                             </div>
                             <div class="contact-title">
-                                <h4>Ms. Toem Phanna</h4>
-                                <span class="role-badge">Lecturer</span>
+                                <h4 data-en="Ms. Toem Phanna" data-kh="អ្នកគ្រូ ទឹម ផាណា">Ms. Toem Phanna</h4>
+                                <span class="role-badge" data-en="Lecturer" data-kh="សាស្ត្រាចារ្យ">Lecturer</span>
                             </div>
                         </div>
                         <div class="contact-details">
@@ -165,18 +170,18 @@
                             </p>
                         </div>
                         <div class="card-actions">
-                            <a href="tel:+85585818621" class="btn-action call-btn" title="Call Ms. Toem Phanna">
+                            <a href="tel:+85585818621" class="btn-action call-btn" title="Call Ms. Toem Phanna" data-title-en="Call Ms. Toem Phanna" data-title-kh="ហៅទូរស័ព្ទទៅកាន់អ្នកគ្រូ ទឹម ផាណា">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                 </svg>
-                                Call
+                                <span data-en="Call" data-kh="ហៅទូរស័ព្ទ">Call</span>
                             </a>
-                            <button class="btn-action copy-btn" data-phone="+85585818621" title="Copy Number">
+                            <button class="btn-action copy-btn" data-phone="+85585818621" title="Copy Number" data-title-en="Copy Number" data-title-kh="ចម្លងលេខទូរស័ព្ទ">
                                 <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                                 </svg>
-                                Copy
+                                <span data-en="Copy" data-kh="ចម្លង">Copy</span>
                             </button>
                         </div>
                     </div>
@@ -185,7 +190,7 @@
 
             <!-- Faculty Photo Activities Section -->
             <section class="activities-section">
-                <h3 class="section-title">Faculty Activities</h3>
+                <h3 class="section-title" data-en="Faculty Activities" data-kh="សកម្មភាពរបស់មហាវិទ្យាល័យ">Faculty Activities</h3>
                 <div class="activities-grid">
                     <!-- Card 1 -->
                     <div class="activity-card" data-index="0" data-src="faculty photo activities/2 AI & Robot LAB.jpg">
@@ -211,7 +216,7 @@
                     <!-- Card 4 -->
                     <div class="activity-card" data-index="3" data-src="faculty photo activities/សកម្មភាពតាំងពិព័រណ៌.jpg">
                         <div class="activity-image-wrapper">
-                            <img src="faculty photo activities/សកម្មភាពតាំងពិព័រណ៌.jpg" alt="Department Exhibition" class="activity-img" loading="lazy">
+                            <img src="faculty photo activities/សកម្មភាពតាំងពិព័រណ៌.jpg" alt="Faculty Exhibition" class="activity-img" loading="lazy">
                         </div>
                     </div>
 
@@ -247,7 +252,7 @@
                 <!-- Expand Gallery Button -->
                 <div class="gallery-actions">
                     <button id="toggle-gallery-btn" class="btn-gallery-toggle">
-                        <span>View All Activities</span>
+                        <span data-en="View All Activities" data-kh="មើលសកម្មភាពទាំងអស់">View All Activities</span>
                         <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
@@ -259,8 +264,8 @@
             <section class="qr-section">
                 <div class="qr-container-card">
                     <div class="qr-text">
-                        <h3>Scan to Share & Save</h3>
-                        <p>This QR code always points to this official portal. Save, print, or share it with other students so they can easily access the department contacts and social channels.</p>
+                        <h3 data-en="Scan to Share & Save" data-kh="ស្កែនដើម្បីរក្សាទុក និងចែករំលែក">Scan to Share & Save</h3>
+                        <p data-en="This QR code always points to this official portal. Save, print, or share it with other students so they can easily access the faculty contacts and social channels." data-kh="កូដ QR នេះតែងតែបង្ហាញទៅកាន់ផតថលផ្លូវការនេះ។ រក្សាទុក បោះពុម្ព ឬចែករំលែកវាជាមួយនិស្សិតផ្សេងទៀត ដើម្បីឱ្យពួកគេអាចចូលទៅកាន់ទំនាក់ទំនងរបស់មហាវិទ្យាល័យ និងបណ្តាញសង្គមបានយ៉ាងងាយស្រួល។">This QR code always points to this official portal. Save, print, or share it with other students so they can easily access the faculty contacts and social channels.</p>
                         <div class="qr-actions">
                             <a href="qrcode.png" download="NPIC_ETE_Portal_QR.png" class="btn btn-secondary">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon">
@@ -268,7 +273,7 @@
                                     <polyline points="7 10 12 15 17 10"></polyline>
                                     <line x1="12" y1="15" x2="12" y2="3"></line>
                                 </svg>
-                                Download QR Code
+                                <span data-en="Download QR Code" data-kh="ទាញយកកូដ QR">Download QR Code</span>
                             </a>
                         </div>
                     </div>
@@ -282,10 +287,10 @@
         <!-- Footer Section -->
         <footer class="footer">
             <div class="footer-divider"></div>
-            <p class="footer-title">National Polytechnic Institute of Cambodia</p>
-            <p class="footer-address">Phum Prey Popel, Sangkat Chom Chao, Khan Porsenchey, Phnom Penh, Cambodia</p>
+            <p class="footer-title" data-en="National Polytechnic Institute of Cambodia" data-kh="វិទ្យាស្ថានជាតិពហុបច្ចេកវិទ្យាកម្ពុជា">National Polytechnic Institute of Cambodia</p>
+            <p class="footer-address" data-en="Phum Prey Popel, Sangkat Chom Chao, Khan Porsenchey, Phnom Penh, Cambodia" data-kh="ភូមិព្រៃពពាល សង្កាត់ចោមចៅ ខណ្ឌពោធិ៍សែនជ័យ រាជធានីភ្នំពេញ ប្រទេសកម្ពុជា">Phum Prey Popel, Sangkat Chom Chao, Khan Porsenchey, Phnom Penh, Cambodia</p>
             <p class="footer-web"><a href="https://npic.edu.kh/en/" target="_blank" rel="noopener noreferrer">www.npic.edu.kh</a></p>
-            <p class="footer-copyright">&copy; 2026 NPIC Faculty of Electronics. All rights reserved.</p>
+            <p class="footer-copyright" data-en="&copy; 2026 NPIC Faculty of Electronics. All rights reserved." data-kh="&copy; ២០២៦ មហាវិទ្យាល័យអេឡិចត្រូនិក NPIC។ រក្សាសិទ្ធិគ្រប់យ៉ាង។">&copy; 2026 NPIC Faculty of Electronics. All rights reserved.</p>
         </footer>
     </div>
 

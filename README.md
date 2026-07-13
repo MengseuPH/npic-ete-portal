@@ -1,6 +1,6 @@
-# NPIC Electronic & Telecommunication Engineering Information Portal
+# NPIC Faculty of Electronic and Telecommunication Information Portal
 
-Official mobile-friendly, responsive information portal for the **Electronic & Telecommunication Engineering Department** at the **National Polytechnic Institute of Cambodia (NPIC)**.
+Official mobile-friendly, responsive information portal for the **Faculty of Electronic and Telecommunication** at the **National Polytechnic Institute of Cambodia (NPIC)**.
 
 ## 🚀 Live Demo
 

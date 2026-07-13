@@ -9,8 +9,8 @@
     --accent-glow: rgba(10, 160, 230, 0.2);
     
     --bg-light: hsl(216, 50%, 98%);
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --card-hover-bg: rgba(255, 255, 255, 0.95);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-hover-bg: rgba(255, 255, 255, 0.98);
     
     --text-main: hsl(218, 60%, 16%);
     --text-muted: hsl(218, 20%, 45%);
@@ -30,11 +30,27 @@
     --radius-lg: 24px;
     --radius-xl: 32px;
     
-    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Google Sans Flex', 'Siemreap', 'Khmer OS Siemreap', system-ui, -apple-system, sans-serif;
+    --font-body: 'Google Sans Flex', 'Siemreap', 'Khmer OS Siemreap', system-ui, -apple-system, sans-serif;
     
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --transition-fast: all 0.15s ease;
+}
+
+html[lang="en"] {
+    --font-heading: 'Google Sans Flex', system-ui, -apple-system, sans-serif;
+    --font-body: 'Google Sans Flex', system-ui, -apple-system, sans-serif;
+}
+
+html[lang="kh"] {
+    --font-heading: 'Moul', 'Khmer OS Moul Light', serif;
+    --font-body: 'Siemreap', 'Khmer OS Siemreap', sans-serif;
+}
+
+html[lang="kh"] h1,
+html[lang="kh"] h2,
+html[lang="kh"] h3 {
+    font-weight: 500;
 }
 
 /* Global Reset & Base Styles */
@@ -76,19 +92,19 @@ body {
 
 .bg-slide {
     position: absolute;
-    top: -15%;
-    left: -15%;
-    width: 130%;
-    height: 130%;
+    top: -8%;
+    left: -8%;
+    width: 116%;
+    height: 116%;
     background-size: cover;
     background-position: center;
     transition: opacity 2s ease-in-out;
     opacity: 0;
-    filter: blur(40px) brightness(0.95) saturate(1.15);
+    filter: blur(11px) brightness(1.05);
 }
 
 .bg-slide.active {
-    opacity: 0.25;
+    opacity: 0.45;
 }
 
 .glow-sphere {
@@ -189,17 +205,17 @@ body {
 
 .header-text h1 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.15rem;
     font-weight: 800;
-    line-height: 1.25;
+    line-height: 1.35;
     color: var(--primary-dark);
-    max-width: 90%;
+    max-width: 95%;
 }
 
 .subtitle {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    font-weight: 500;
+    font-size: 1.15rem;
+    color: var(--text-main);
+    font-weight: 600;
 }
 
 /* Hero / Department Info Card */
@@ -687,7 +703,7 @@ body {
 
 .footer-title {
     font-family: var(--font-heading);
-    font-size: 0.88rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--primary-dark);
     text-transform: uppercase;
@@ -695,13 +711,13 @@ body {
 }
 
 .footer-address {
-    font-size: 0.78rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
-    max-width: 85%;
+    max-width: 90%;
 }
 
 .footer-web a {
-    font-size: 0.82rem;
+    font-size: 0.98rem;
     font-weight: 600;
     color: var(--primary-light);
     text-decoration: none;
@@ -714,7 +730,7 @@ body {
 }
 
 .footer-copyright {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     margin-top: 4px;
 }
@@ -1027,4 +1043,43 @@ body {
         font-size: 30px;
     }
 
+}
+
+/* Language Switcher Styling */
+.lang-switcher {
+    align-self: flex-start;
+    display: flex;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 3px;
+    border-radius: 100px;
+    box-shadow: 0 4px 12px rgba(24, 70, 160, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+    margin-bottom: -8px;
+    transition: var(--transition-smooth);
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+    padding: 6px 16px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 100px;
+    transition: var(--transition-smooth);
+    font-family: var(--font-body);
+}
+
+.lang-btn:hover {
+    color: var(--primary);
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(30, 80, 220, 0.25);
 }

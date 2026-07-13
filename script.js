@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    setupLanguageSwitcher();
     setupCopyButtons();
     setupActivitiesGallery();
     setupBackgroundSlideshow();
@@ -37,18 +38,19 @@ function setupCopyButtons() {
 
                 // Visual feedback on the button
                 const originalContent = button.innerHTML;
+                const isKhmer = (window.currentPortalLang === 'kh');
                 button.innerHTML = `
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    Copied!
+                    ${isKhmer ? 'បានចម្លង!' : 'Copied!'}
                 `;
                 button.style.borderColor = 'var(--accent)';
                 button.style.color = 'var(--primary)';
                 button.style.backgroundColor = 'rgba(10, 160, 230, 0.08)';
 
                 // Show toast notification
-                toast.textContent = `Copied ${phoneNumber} to clipboard!`;
+                toast.textContent = isKhmer ? `បានចម្លងលេខ ${phoneNumber} រួចហើយ!` : `Copied ${phoneNumber} to clipboard!`;
                 toast.classList.add('show');
 
                 // Reset button and toast after delay
@@ -97,12 +99,13 @@ function setupActivitiesGallery() {
                 }
             });
             
+            const isKhmer = (window.currentPortalLang === 'kh');
             if (isExpanded) {
                 toggleBtn.classList.remove('expanded');
-                toggleBtn.querySelector('span').textContent = 'View All Activities';
+                toggleBtn.querySelector('span').textContent = isKhmer ? 'មើលសកម្មភាពទាំងអស់' : 'View All Activities';
             } else {
                 toggleBtn.classList.add('expanded');
-                toggleBtn.querySelector('span').textContent = 'Show Less';
+                toggleBtn.querySelector('span').textContent = isKhmer ? 'បង្ហាញតិច' : 'Show Less';
             }
         });
     }
@@ -276,3 +279,62 @@ function setupBackgroundSlideshow() {
     }, 6000);
 }
 
+/**
+ * Setup language selector logic and handle switching between EN and KH
+ */
+function setupLanguageSwitcher() {
+    const langBtns = document.querySelectorAll('.lang-btn');
+    let currentLang = localStorage.getItem('portal-lang') || 'en';
+    
+    applyLanguage(currentLang);
+
+    langBtns.forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+
+        btn.addEventListener('click', () => {
+            const selectedLang = btn.getAttribute('data-lang');
+            if (selectedLang === currentLang) return;
+
+            currentLang = selectedLang;
+            localStorage.setItem('portal-lang', currentLang);
+
+            langBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            applyLanguage(currentLang);
+        });
+    });
+}
+
+function applyLanguage(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    window.currentPortalLang = lang;
+
+    // Swap text content using data attributes
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'kh' ? el.getAttribute('data-kh') : el.getAttribute('data-en');
+    });
+
+    // Swap dynamic attributes
+    document.querySelectorAll('[data-title-en]').forEach(el => {
+        el.setAttribute('title', lang === 'kh' ? el.getAttribute('data-title-kh') : el.getAttribute('data-title-en'));
+    });
+
+    // Update gallery button text state
+    const toggleBtn = document.getElementById('toggle-gallery-btn');
+    if (toggleBtn) {
+        const isExpanded = toggleBtn.classList.contains('expanded');
+        const textSpan = toggleBtn.querySelector('span');
+        if (textSpan) {
+            if (isExpanded) {
+                textSpan.textContent = lang === 'kh' ? 'បង្ហាញតិច' : 'Show Less';
+            } else {
+                textSpan.textContent = lang === 'kh' ? 'មើលសកម្មភាពទាំងអស់' : 'View All Activities';
+            }
+        }
+    }
+}
