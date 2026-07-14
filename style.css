@@ -1201,3 +1201,97 @@ body {
     }
 }
 
+/* Location Map Section Styling */
+.map-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-container-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+}
+
+.map-container-card:hover {
+    background-color: var(--card-hover-bg);
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: rgba(30, 80, 220, 0.25);
+}
+
+.map-wrapper {
+    width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 16px rgba(18, 45, 90, 0.05);
+    height: 280px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.map-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.map-details h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.map-details p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.btn-map-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: var(--radius-sm);
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-smooth);
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.btn-map-link:hover, .btn-map-link:active {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgba(30, 80, 220, 0.2);
+}
+
+.btn-map-link svg {
+    width: 18px;
+    height: 18px;
+}
+
